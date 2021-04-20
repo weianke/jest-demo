@@ -6,7 +6,7 @@ jest.mock('axios');
 // 2.它可以让我们自由的设置返回函数
 // 3.mock第三个作用是改变函数的内部实现
 
-test.only('测试 runcallback', () => {
+test('测试 runcallback', () => {
   const func = jest.fn(); // 生成mock函数，捕获mock函数的调用
   func.mockReturnValueOnce('dell');
   runCallback(func);
