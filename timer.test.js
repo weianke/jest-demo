@@ -1,9 +1,13 @@
 
 import timer from './timer';
 
-test('timer 测试', (done) => {
-  timer(()=> {
-    expect(1).toBe(1);
-    done();
-  })
+jest.useFakeTimers();
+test('timer 测试', () => {
+  const fn = jest.fn();
+  timer(fn);
+  // jest.runOnlyPendingTimers();
+  jest.advanceTimersByTime(3000);
+  expect(fn).toHaveBeenCalledTimes(1);
+  jest.advanceTimersByTime(3000);
+  expect(fn).toHaveBeenCalledTimes(2);
 })
