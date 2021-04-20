@@ -6,7 +6,7 @@ import { add, minus, multi } from './math.js';
 // });
 
 // test('toEqual 匹配器', () => {
-//   // toequal 判断内容相等
+//   // toequal 判断对象相等
 //   const a = {
 //     one: 1,
 //   };
